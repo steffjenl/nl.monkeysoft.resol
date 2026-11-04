@@ -13,7 +13,7 @@
     "validate": "homey app validate --level publish"
   },
   "dependencies": {
-    "homey": "^3.0.0",
+    "homey": "^4.6.2",
     "resol-vbus": "0.29.0"
   },
   "license": "MIT",
