@@ -1,7 +1,7 @@
 'use strict';
 
 const net = require('net');
-const { Packet } = require('resol-vbus');
+const Packet = require('resol-vbus/src/packet');
 
 /** Build a DeltaSol MX style live packet (dst 0x0010, src 0x7E11, cmd 0x0100). */
 function mxPacket(int16Values, source = 0x7E11) {
