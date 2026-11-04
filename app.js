@@ -6,7 +6,13 @@ const { writeValue } = require('./lib/writer');
 
 class ResolApp extends Homey.App {
   async onInit() {
-    this.vbus = new VBusManager({ log: (...a) => this.log(...a) });
+    this.vbus = new VBusManager({
+      log: (...a) => this.log(...a),
+      timers: {
+        setTimeout: (fn, ms) => this.homey.setTimeout(fn, ms),
+        clearTimeout: (t) => this.homey.clearTimeout(t),
+      },
+    });
     this._registerFlowCards();
     this.log('Resol VBus app started');
   }

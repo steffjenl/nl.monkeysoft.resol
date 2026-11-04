@@ -1,6 +1,6 @@
 {
   "id": "nl.monkeysoft.resol",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "compatibility": ">=12.0.0",
   "sdk": 3,
   "platforms": [
@@ -14,6 +14,10 @@
     "en": "Read Resol solar and heating controllers (DeltaSol and others) via a KM2, DL2, DL3 or VBus/LAN adapter.",
     "nl": "Lees Resol zonne- en verwarmingsregelaars (DeltaSol e.a.) uit via een KM2, DL2, DL3 of VBus/LAN-adapter."
   },
+  "tags": {
+    "en": ["resol", "deltasol", "vbus", "solar", "solar thermal", "heating", "km2", "dl2", "dl3"],
+    "nl": ["resol", "deltasol", "vbus", "zonneboiler", "zonthermisch", "verwarming", "km2", "dl2", "dl3"]
+  },
   "brandColor": "#E30613",
   "category": [
     "energy"
@@ -26,7 +30,8 @@
   },
   "author": {
     "name": "MonkeySoft",
-    "email": "info@monkeysoft.nl"
+    "email": "info@monkeysoft.nl",
+    "website": "https://monkeysoft.nl"
   },
   "contributing": {
     "donate": {
@@ -35,8 +40,10 @@
       }
     }
   },
+  "homepage": "https://monkeysoft.nl",
+  "support": "mailto:info@monkeysoft.nl",
   "bugs": {
-    "url": "https://github.com/monkeysoft/nl.monkeysoft.resol/issues"
+    "url": "https://github.com/steffjenl/nl.monkeysoft.resol/issues"
   },
-  "source": "https://github.com/monkeysoft/nl.monkeysoft.resol"
+  "source": "https://github.com/steffjenl/nl.monkeysoft.resol"
 }

@@ -1,6 +1,12 @@
 .git
+.github
+.idea
+.vscode
 test
 specs
 docs
 make_images.py
-.github
+eslint.config.js
+README.md
+CONTRIBUTING.md
+SECURITY.md

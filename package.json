@@ -1,12 +1,13 @@
 {
   "name": "nl.monkeysoft.resol",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Resol VBus integration for Homey",
   "main": "app.js",
   "engines": {
     "node": ">=20"
   },
   "scripts": {
+    "lint": "eslint .",
     "test": "node --test test/test-*.js",
     "build": "homey app build",
     "validate": "homey app validate --level publish"
@@ -19,5 +20,10 @@
   "author": {
     "name": "MonkeySoft",
     "email": "info@monkeysoft.nl"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "eslint": "^9.39.5",
+    "globals": "^17.14.0"
   }
 }

@@ -1,0 +1,3 @@
+Lees je Resol zonne- en verwarmingsregelaars (DeltaSol MX, BS, SLT en vele andere) uit in Homey. De app maakt lokaal verbinding met een KM2, DL2, DL3 of VBus/LAN-module in je netwerk. Een cloudaccount is niet nodig.
+
+Voeg per regelaar een apparaat toe, of per temperatuursensor zodat je ze in verschillende kamers kunt plaatsen. Temperaturen, pompsnelheden, instraling, doorstroming, bedrijfsuren en foutstatus verschijnen automatisch. Gebruik flowkaarten voor waardeveranderingen, fouten, verbroken verbinding en waarden boven of onder een grens. Een waarde terugschrijven naar de regelaar is experimenteel en standaard uitgeschakeld.
