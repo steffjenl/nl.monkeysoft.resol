@@ -1,0 +1,1 @@
+{ "title": { "en": "Controller !{{is|is not}} online", "nl": "Regelaar !{{is|is niet}} online" }, "args": [{ "type": "device", "name": "device", "filter": "driver_id=resol-controller" }] }

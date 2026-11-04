@@ -1,0 +1,23 @@
+{
+  "name": "nl.monkeysoft.resol",
+  "version": "0.1.0",
+  "description": "Resol VBus integration for Homey",
+  "main": "app.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test test/test-*.js",
+    "build": "homey app build",
+    "validate": "homey app validate --level publish"
+  },
+  "dependencies": {
+    "homey": "^3.0.0",
+    "resol-vbus": "0.29.0"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "MonkeySoft",
+    "email": "info@monkeysoft.nl"
+  }
+}

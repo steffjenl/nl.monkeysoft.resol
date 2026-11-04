@@ -1,0 +1,628 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "nl.monkeysoft.resol",
+  "version": "0.1.0",
+  "compatibility": ">=12.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Resol VBus",
+    "nl": "Resol VBus"
+  },
+  "description": {
+    "en": "Read Resol solar and heating controllers (DeltaSol and others) via a KM2, DL2, DL3 or VBus/LAN adapter.",
+    "nl": "Lees Resol zonne- en verwarmingsregelaars (DeltaSol e.a.) uit via een KM2, DL2, DL3 of VBus/LAN-adapter."
+  },
+  "brandColor": "#E30613",
+  "category": [
+    "energy"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "MonkeySoft",
+    "email": "info@monkeysoft.nl"
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "monkeysoft"
+      }
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/monkeysoft/nl.monkeysoft.resol/issues"
+  },
+  "source": "https://github.com/monkeysoft/nl.monkeysoft.resol",
+  "flow": {
+    "triggers": [
+      {
+        "title": {
+          "en": "Controller stopped sending data",
+          "nl": "Regelaar stuurt geen data meer"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=resol-controller"
+          }
+        ],
+        "id": "connection_lost"
+      },
+      {
+        "title": {
+          "en": "Controller data restored",
+          "nl": "Regelaardata hersteld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=resol-controller"
+          }
+        ],
+        "id": "connection_restored"
+      },
+      {
+        "title": {
+          "en": "Controller reports an error",
+          "nl": "Regelaar meldt een fout"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=resol-controller"
+          }
+        ],
+        "id": "controller_error"
+      },
+      {
+        "title": {
+          "en": "A value changed",
+          "nl": "Een waarde is gewijzigd"
+        },
+        "titleFormatted": {
+          "en": "[[field]] changed",
+          "nl": "[[field]] is gewijzigd"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=resol-controller"
+          },
+          {
+            "type": "autocomplete",
+            "name": "field",
+            "placeholder": {
+              "en": "Sensor",
+              "nl": "Sensor"
+            }
+          }
+        ],
+        "tokens": [
+          {
+            "name": "value",
+            "type": "number",
+            "title": {
+              "en": "Value",
+              "nl": "Waarde"
+            },
+            "example": 21.5
+          },
+          {
+            "name": "field",
+            "type": "string",
+            "title": {
+              "en": "Sensor",
+              "nl": "Sensor"
+            },
+            "example": "Temperature sensor 1"
+          }
+        ],
+        "id": "value_changed"
+      }
+    ],
+    "conditions": [
+      {
+        "title": {
+          "en": "Controller !{{is|is not}} online",
+          "nl": "Regelaar !{{is|is niet}} online"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=resol-controller"
+          }
+        ],
+        "id": "controller_online"
+      },
+      {
+        "title": {
+          "en": "Output !{{is|is not}} running",
+          "nl": "Uitgang !{{is|is niet}} actief"
+        },
+        "titleFormatted": {
+          "en": "[[field]] !{{is|is not}} running",
+          "nl": "[[field]] !{{is|is niet}} actief"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=resol-controller"
+          },
+          {
+            "type": "autocomplete",
+            "name": "field",
+            "placeholder": {
+              "en": "Sensor",
+              "nl": "Sensor"
+            }
+          }
+        ],
+        "id": "relay_is_on"
+      },
+      {
+        "title": {
+          "en": "Value !{{is above|is not above}} threshold",
+          "nl": "Waarde !{{is boven|is niet boven}} drempel"
+        },
+        "titleFormatted": {
+          "en": "[[field]] !{{is above|is not above}} [[threshold]]",
+          "nl": "[[field]] !{{is boven|is niet boven}} [[threshold]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=resol-controller"
+          },
+          {
+            "type": "autocomplete",
+            "name": "field",
+            "placeholder": {
+              "en": "Sensor",
+              "nl": "Sensor"
+            }
+          },
+          {
+            "type": "number",
+            "name": "threshold",
+            "placeholder": {
+              "en": "Value",
+              "nl": "Waarde"
+            }
+          }
+        ],
+        "id": "value_above"
+      },
+      {
+        "title": {
+          "en": "Value !{{is below|is not below}} threshold",
+          "nl": "Waarde !{{is onder|is niet onder}} drempel"
+        },
+        "titleFormatted": {
+          "en": "[[field]] !{{is below|is not below}} [[threshold]]",
+          "nl": "[[field]] !{{is onder|is niet onder}} [[threshold]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=resol-controller"
+          },
+          {
+            "type": "autocomplete",
+            "name": "field",
+            "placeholder": {
+              "en": "Sensor",
+              "nl": "Sensor"
+            }
+          },
+          {
+            "type": "number",
+            "name": "threshold",
+            "placeholder": {
+              "en": "Value",
+              "nl": "Waarde"
+            }
+          }
+        ],
+        "id": "value_below"
+      }
+    ],
+    "actions": [
+      {
+        "title": {
+          "en": "Set controller value (experimental)",
+          "nl": "Stel regelaarwaarde in (experimenteel)"
+        },
+        "titleFormatted": {
+          "en": "Set value id [[value_id]] to [[value]]",
+          "nl": "Zet value-id [[value_id]] op [[value]]"
+        },
+        "hint": {
+          "en": "Needs 'Allow writing' in device settings. Value ids are controller specific (see Resol docs).",
+          "nl": "Vereist 'Schrijven toestaan' in apparaatinstellingen. Value-id's zijn regelaarspecifiek (zie Resol-documentatie)."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=resol-controller"
+          },
+          {
+            "type": "number",
+            "name": "value_id",
+            "placeholder": {
+              "en": "Value id",
+              "nl": "Value-id"
+            }
+          },
+          {
+            "type": "number",
+            "name": "value",
+            "placeholder": {
+              "en": "Value",
+              "nl": "Waarde"
+            }
+          }
+        ],
+        "id": "set_controller_value"
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "Resol Controller",
+        "nl": "Resol regelaar"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "images": {
+        "small": "/drivers/resol-controller/assets/images/small.png",
+        "large": "/drivers/resol-controller/assets/images/large.png"
+      },
+      "pair": [
+        {
+          "id": "connection",
+          "title": {
+            "en": "Connect to KM2 / DL2",
+            "nl": "Verbind met KM2 / DL2"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Connection",
+            "nl": "Verbinding"
+          },
+          "children": [
+            {
+              "id": "host",
+              "type": "text",
+              "label": {
+                "en": "Host / IP",
+                "nl": "Host / IP"
+              },
+              "value": ""
+            },
+            {
+              "id": "port",
+              "type": "number",
+              "label": {
+                "en": "Port",
+                "nl": "Poort"
+              },
+              "value": 7053,
+              "min": 1,
+              "max": 65535
+            },
+            {
+              "id": "password",
+              "type": "password",
+              "label": {
+                "en": "VBus password",
+                "nl": "VBus-wachtwoord"
+              },
+              "value": "vbus"
+            },
+            {
+              "id": "channel",
+              "type": "number",
+              "label": {
+                "en": "VBus channel",
+                "nl": "VBus-kanaal"
+              },
+              "value": 0,
+              "min": 0,
+              "max": 9
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Behaviour",
+            "nl": "Gedrag"
+          },
+          "children": [
+            {
+              "id": "update_interval",
+              "type": "number",
+              "label": {
+                "en": "Minimum update interval (s)",
+                "nl": "Minimale update-interval (s)"
+              },
+              "hint": {
+                "en": "Values are pushed every few seconds by the controller; Homey updates a value at most this often.",
+                "nl": "De regelaar stuurt om de paar seconden data; Homey werkt een waarde hooguit zo vaak bij."
+              },
+              "value": 10,
+              "min": 1,
+              "max": 3600
+            },
+            {
+              "id": "stale_timeout",
+              "type": "number",
+              "label": {
+                "en": "Mark unavailable after (s)",
+                "nl": "Markeer niet beschikbaar na (s)"
+              },
+              "value": 120,
+              "min": 30,
+              "max": 3600
+            },
+            {
+              "id": "aliases",
+              "type": "textarea",
+              "label": {
+                "en": "Sensor names",
+                "nl": "Sensornamen"
+              },
+              "hint": {
+                "en": "One per line: key=Name, e.g. temperature_sensor_1=Solar collector. Key is the part after the dot in the capability id.",
+                "nl": "Eén per regel: sleutel=Naam, bv. temperature_sensor_1=Zonnecollector. Sleutel is het deel na de punt in de capability-id."
+              },
+              "value": ""
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Experimental",
+            "nl": "Experimenteel"
+          },
+          "children": [
+            {
+              "id": "allow_write",
+              "type": "checkbox",
+              "label": {
+                "en": "Allow writing values to the controller",
+                "nl": "Waarden naar de regelaar schrijven toestaan"
+              },
+              "hint": {
+                "en": "Enables the 'Set controller value' flow action. Wrong value ids can change controller configuration. Use with care.",
+                "nl": "Activeert de flow-actie 'Stel regelaarwaarde in'. Verkeerde value-id's kunnen de configuratie wijzigen. Voorzichtig gebruiken."
+              },
+              "value": false
+            }
+          ]
+        }
+      ],
+      "id": "resol-controller"
+    },
+    {
+      "name": {
+        "en": "Resol Temperature Sensor",
+        "nl": "Resol temperatuursensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature"
+      ],
+      "images": {
+        "small": "/drivers/resol-sensor/assets/images/small.png",
+        "large": "/drivers/resol-sensor/assets/images/large.png"
+      },
+      "pair": [
+        {
+          "id": "connection",
+          "title": {
+            "en": "Connect to KM2 / DL2",
+            "nl": "Verbind met KM2 / DL2"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Connection",
+            "nl": "Verbinding"
+          },
+          "children": [
+            {
+              "id": "host",
+              "type": "text",
+              "label": {
+                "en": "Host / IP",
+                "nl": "Host / IP"
+              },
+              "value": ""
+            },
+            {
+              "id": "port",
+              "type": "number",
+              "label": {
+                "en": "Port",
+                "nl": "Poort"
+              },
+              "value": 7053,
+              "min": 1,
+              "max": 65535
+            },
+            {
+              "id": "password",
+              "type": "password",
+              "label": {
+                "en": "VBus password",
+                "nl": "VBus-wachtwoord"
+              },
+              "value": "vbus"
+            },
+            {
+              "id": "channel",
+              "type": "number",
+              "label": {
+                "en": "VBus channel",
+                "nl": "VBus-kanaal"
+              },
+              "value": 0,
+              "min": 0,
+              "max": 9
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Behaviour",
+            "nl": "Gedrag"
+          },
+          "children": [
+            {
+              "id": "update_interval",
+              "type": "number",
+              "label": {
+                "en": "Minimum update interval (s)",
+                "nl": "Minimale update-interval (s)"
+              },
+              "hint": {
+                "en": "Values are pushed every few seconds by the controller; Homey updates a value at most this often.",
+                "nl": "De regelaar stuurt om de paar seconden data; Homey werkt een waarde hooguit zo vaak bij."
+              },
+              "value": 10,
+              "min": 1,
+              "max": 3600
+            },
+            {
+              "id": "stale_timeout",
+              "type": "number",
+              "label": {
+                "en": "Mark unavailable after (s)",
+                "nl": "Markeer niet beschikbaar na (s)"
+              },
+              "value": 120,
+              "min": 30,
+              "max": 3600
+            }
+          ]
+        }
+      ],
+      "id": "resol-sensor"
+    }
+  ],
+  "capabilities": {
+    "measure_flow_rate": {
+      "type": "number",
+      "title": {
+        "en": "Flow rate",
+        "nl": "Debiet"
+      },
+      "units": {
+        "en": "l/h"
+      },
+      "decimals": 0,
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/measure_flow_rate.svg"
+    },
+    "measure_hours": {
+      "type": "number",
+      "title": {
+        "en": "Operating hours",
+        "nl": "Bedrijfsuren"
+      },
+      "units": {
+        "en": "h"
+      },
+      "decimals": 0,
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/measure_hours.svg"
+    },
+    "measure_irradiance": {
+      "type": "number",
+      "title": {
+        "en": "Irradiation",
+        "nl": "Instraling"
+      },
+      "units": {
+        "en": "W/m²"
+      },
+      "decimals": 0,
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/measure_irradiance.svg"
+    },
+    "measure_percent": {
+      "type": "number",
+      "title": {
+        "en": "Percentage",
+        "nl": "Percentage"
+      },
+      "units": {
+        "en": "%"
+      },
+      "decimals": 0,
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/measure_percent.svg"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "pair": {
+    "title": "Verbind met KM2 / DL2",
+    "host": "Host / IP",
+    "port": "Poort",
+    "password": "VBus-wachtwoord",
+    "password_hint": "Standaard \"vbus\" (instelbaar in de webinterface van de KM2/DL2).",
+    "channel": "VBus-kanaal",
+    "channel_hint": "Alleen voor DL3 / VBus.net met meerdere kanalen. Anders 0.",
+    "connect": "Verbinden",
+    "connecting": "Verbinden en luisteren naar regelaars..."
+  },
+  "device": {
+    "connecting": "Verbinden...",
+    "connect_failed": "Verbinding mislukt: {{error}}",
+    "no_data": "Geen data ontvangen van de regelaar"
+  },
+  "errors": {
+    "no_host": "Vul het host- of IP-adres in",
+    "no_data": "Verbonden, maar binnen 20 seconden geen regelaardata ontvangen. Controleer of de regelaar op de VBus van deze module zit.",
+    "bad_password": "Het VBus-wachtwoord is geweigerd",
+    "connect_failed": "Verbinden mislukt: {{error}}",
+    "not_connected": "Niet verbonden met de VBus-module",
+    "write_disabled": "Schrijven staat uit. Schakel 'Schrijven toestaan' in bij de apparaatinstellingen.",
+    "bad_value_id": "Ongeldige value-id"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "name": {
+    "en": "Resol Temperature Sensor",
+    "nl": "Resol temperatuursensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature"
+  ],
+  "images": {
+    "small": "/drivers/resol-sensor/assets/images/small.png",
+    "large": "/drivers/resol-sensor/assets/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "connection",
+      "title": {
+        "en": "Connect to KM2 / DL2",
+        "nl": "Verbind met KM2 / DL2"
+      }
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Connection",
+        "nl": "Verbinding"
+      },
+      "children": [
+        {
+          "id": "host",
+          "type": "text",
+          "label": {
+            "en": "Host / IP",
+            "nl": "Host / IP"
+          },
+          "value": ""
+        },
+        {
+          "id": "port",
+          "type": "number",
+          "label": {
+            "en": "Port",
+            "nl": "Poort"
+          },
+          "value": 7053,
+          "min": 1,
+          "max": 65535
+        },
+        {
+          "id": "password",
+          "type": "password",
+          "label": {
+            "en": "VBus password",
+            "nl": "VBus-wachtwoord"
+          },
+          "value": "vbus"
+        },
+        {
+          "id": "channel",
+          "type": "number",
+          "label": {
+            "en": "VBus channel",
+            "nl": "VBus-kanaal"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 9
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Behaviour",
+        "nl": "Gedrag"
+      },
+      "children": [
+        {
+          "id": "update_interval",
+          "type": "number",
+          "label": {
+            "en": "Minimum update interval (s)",
+            "nl": "Minimale update-interval (s)"
+          },
+          "hint": {
+            "en": "Values are pushed every few seconds by the controller; Homey updates a value at most this often.",
+            "nl": "De regelaar stuurt om de paar seconden data; Homey werkt een waarde hooguit zo vaak bij."
+          },
+          "value": 10,
+          "min": 1,
+          "max": 3600
+        },
+        {
+          "id": "stale_timeout",
+          "type": "number",
+          "label": {
+            "en": "Mark unavailable after (s)",
+            "nl": "Markeer niet beschikbaar na (s)"
+          },
+          "value": 120,
+          "min": 30,
+          "max": 3600
+        }
+      ]
+    }
+  ]
+}

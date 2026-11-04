@@ -1,0 +1,1 @@
+{ "title": { "en": "Controller reports an error", "nl": "Regelaar meldt een fout" }, "args": [{ "type": "device", "name": "device", "filter": "driver_id=resol-controller" }] }

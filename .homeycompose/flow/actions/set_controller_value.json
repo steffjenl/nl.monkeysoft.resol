@@ -1,0 +1,8 @@
+{
+  "title": { "en": "Set controller value (experimental)", "nl": "Stel regelaarwaarde in (experimenteel)" },
+  "titleFormatted": { "en": "Set value id [[value_id]] to [[value]]", "nl": "Zet value-id [[value_id]] op [[value]]" },
+  "hint": { "en": "Needs 'Allow writing' in device settings. Value ids are controller specific (see Resol docs).", "nl": "Vereist 'Schrijven toestaan' in apparaatinstellingen. Value-id's zijn regelaarspecifiek (zie Resol-documentatie)." },
+  "args": [{ "type": "device", "name": "device", "filter": "driver_id=resol-controller" },
+    { "type": "number", "name": "value_id", "placeholder": { "en": "Value id", "nl": "Value-id" } },
+    { "type": "number", "name": "value", "placeholder": { "en": "Value", "nl": "Waarde" } }]
+}

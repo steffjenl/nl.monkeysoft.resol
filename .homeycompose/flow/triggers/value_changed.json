@@ -1,0 +1,9 @@
+{
+  "title": { "en": "A value changed", "nl": "Een waarde is gewijzigd" },
+  "titleFormatted": { "en": "[[field]] changed", "nl": "[[field]] is gewijzigd" },
+  "args": [{ "type": "device", "name": "device", "filter": "driver_id=resol-controller" }, { "type": "autocomplete", "name": "field", "placeholder": { "en": "Sensor", "nl": "Sensor" } }],
+  "tokens": [
+    { "name": "value", "type": "number", "title": { "en": "Value", "nl": "Waarde" }, "example": 21.5 },
+    { "name": "field", "type": "string", "title": { "en": "Sensor", "nl": "Sensor" }, "example": "Temperature sensor 1" }
+  ]
+}

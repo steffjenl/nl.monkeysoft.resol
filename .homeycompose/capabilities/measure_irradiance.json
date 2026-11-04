@@ -1,0 +1,16 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Irradiation",
+    "nl": "Instraling"
+  },
+  "units": {
+    "en": "W/m²"
+  },
+  "decimals": 0,
+  "getable": true,
+  "setable": false,
+  "insights": true,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/measure_irradiance.svg"
+}

@@ -1,0 +1,27 @@
+{
+  "pair": {
+    "title": "Connect to KM2 / DL2",
+    "host": "Host / IP",
+    "port": "Port",
+    "password": "VBus password",
+    "password_hint": "Default is \"vbus\" (set on the KM2/DL2 web interface).",
+    "channel": "VBus channel",
+    "channel_hint": "Only for DL3 / VBus.net with multiple channels. Use 0 otherwise.",
+    "connect": "Connect",
+    "connecting": "Connecting and listening for controllers..."
+  },
+  "device": {
+    "connecting": "Connecting...",
+    "connect_failed": "Connection failed: {{error}}",
+    "no_data": "No data received from the controller"
+  },
+  "errors": {
+    "no_host": "Enter the host or IP address",
+    "no_data": "Connected, but no controller data was received within 20 seconds. Check that the controller is on the VBus of this module.",
+    "bad_password": "The VBus password was rejected",
+    "connect_failed": "Could not connect: {{error}}",
+    "not_connected": "Not connected to the VBus module",
+    "write_disabled": "Writing is disabled. Enable 'Allow writing' in the device settings.",
+    "bad_value_id": "Invalid value id"
+  }
+}

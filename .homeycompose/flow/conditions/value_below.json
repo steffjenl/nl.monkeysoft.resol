@@ -1,0 +1,5 @@
+{
+  "title": { "en": "Value !{{is below|is not below}} threshold", "nl": "Waarde !{{is onder|is niet onder}} drempel" },
+  "titleFormatted": { "en": "[[field]] !{{is below|is not below}} [[threshold]]", "nl": "[[field]] !{{is onder|is niet onder}} [[threshold]]" },
+  "args": [{ "type": "device", "name": "device", "filter": "driver_id=resol-controller" }, { "type": "autocomplete", "name": "field", "placeholder": { "en": "Sensor", "nl": "Sensor" } }, { "type": "number", "name": "threshold", "placeholder": { "en": "Value", "nl": "Waarde" } }]
+}

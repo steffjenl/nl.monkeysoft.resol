@@ -1,0 +1,1 @@
+{ "title": { "en": "Controller data restored", "nl": "Regelaardata hersteld" }, "args": [{ "type": "device", "name": "device", "filter": "driver_id=resol-controller" }] }

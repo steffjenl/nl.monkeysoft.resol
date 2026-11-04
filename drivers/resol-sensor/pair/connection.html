@@ -1,0 +1,51 @@
+<style>
+  .field { margin-bottom: 14px; }
+  label { display: block; font-weight: 600; margin-bottom: 4px; }
+  input { width: 100%; box-sizing: border-box; padding: 10px; font-size: 16px; }
+  #error { color: #d32f2f; margin: 10px 0; min-height: 1.2em; }
+  button { width: 100%; padding: 12px; font-size: 16px; }
+  .hint { font-size: 12px; opacity: .7; }
+</style>
+<div class="field">
+  <label for="host" data-i18n="pair.host">Host / IP</label>
+  <input id="host" type="text" placeholder="192.168.1.50" autocapitalize="none" autocorrect="off">
+</div>
+<div class="field">
+  <label for="port" data-i18n="pair.port">Port</label>
+  <input id="port" type="number" value="7053">
+</div>
+<div class="field">
+  <label for="password" data-i18n="pair.password">VBus password</label>
+  <input id="password" type="password" value="vbus" autocomplete="off">
+  <div class="hint" data-i18n="pair.password_hint">Default is "vbus" (set on the KM2/DL2 web interface).</div>
+</div>
+<div class="field">
+  <label for="channel" data-i18n="pair.channel">VBus channel</label>
+  <input id="channel" type="number" value="0" min="0">
+  <div class="hint" data-i18n="pair.channel_hint">Only for DL3 / VBus.net with multiple channels. Use 0 otherwise.</div>
+</div>
+<div id="error"></div>
+<button id="connect" class="hy-button-primary" data-i18n="pair.connect">Connect</button>
+
+<script>
+  Homey.setTitle(Homey.__('pair.title'));
+  var btn = document.getElementById('connect');
+  var err = document.getElementById('error');
+  btn.addEventListener('click', function () {
+    err.textContent = '';
+    btn.disabled = true;
+    btn.textContent = Homey.__('pair.connecting');
+    Homey.emit('connect', {
+      host: document.getElementById('host').value,
+      port: document.getElementById('port').value,
+      password: document.getElementById('password').value,
+      channel: document.getElementById('channel').value
+    }).then(function () {
+      Homey.showView('list_devices');
+    }).catch(function (e) {
+      err.textContent = e.message || String(e);
+      btn.disabled = false;
+      btn.textContent = Homey.__('pair.connect');
+    });
+  });
+</script>

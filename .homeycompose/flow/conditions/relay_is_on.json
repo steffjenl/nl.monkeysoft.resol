@@ -1,0 +1,5 @@
+{
+  "title": { "en": "Output !{{is|is not}} running", "nl": "Uitgang !{{is|is niet}} actief" },
+  "titleFormatted": { "en": "[[field]] !{{is|is not}} running", "nl": "[[field]] !{{is|is niet}} actief" },
+  "args": [{ "type": "device", "name": "device", "filter": "driver_id=resol-controller" }, { "type": "autocomplete", "name": "field", "placeholder": { "en": "Sensor", "nl": "Sensor" } }]
+}
