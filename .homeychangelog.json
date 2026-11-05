@@ -2,5 +2,8 @@
   "1.0.0": {
     "en": "First release: read Resol controllers and temperature sensors via KM2, DL2, DL3 or VBus/LAN, with flow cards.",
     "nl": "Eerste release: lees Resol-regelaars en temperatuursensoren uit via KM2, DL2, DL3 of VBus/LAN, met flowkaarten."
+  },
+  "1.0.1": {
+    "en": "Fix NodeJS deps"
   }
 }

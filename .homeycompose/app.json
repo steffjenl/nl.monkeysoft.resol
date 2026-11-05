@@ -1,6 +1,6 @@
 {
   "id": "nl.monkeysoft.resol",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "compatibility": ">=12.0.0",
   "sdk": 3,
   "platforms": [
@@ -15,8 +15,28 @@
     "nl": "Lees Resol zonne- en verwarmingsregelaars (DeltaSol e.a.) uit via een KM2, DL2, DL3 of VBus/LAN-adapter."
   },
   "tags": {
-    "en": ["resol", "deltasol", "vbus", "solar", "solar thermal", "heating", "km2", "dl2", "dl3"],
-    "nl": ["resol", "deltasol", "vbus", "zonneboiler", "zonthermisch", "verwarming", "km2", "dl2", "dl3"]
+    "en": [
+      "resol",
+      "deltasol",
+      "vbus",
+      "solar",
+      "solar thermal",
+      "heating",
+      "km2",
+      "dl2",
+      "dl3"
+    ],
+    "nl": [
+      "resol",
+      "deltasol",
+      "vbus",
+      "zonneboiler",
+      "zonthermisch",
+      "verwarming",
+      "km2",
+      "dl2",
+      "dl3"
+    ]
   },
   "brandColor": "#E30613",
   "category": [
