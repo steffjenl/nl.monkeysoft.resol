@@ -5,5 +5,9 @@
   },
   "1.0.1": {
     "en": "Fix NodeJS deps"
+  },
+  "1.0.2": {
+    "en": "Driver-specific icons",
+    "nl": "Eigen pictogram per driver"
   }
 }
